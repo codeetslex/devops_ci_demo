@@ -9,7 +9,7 @@ class HomeIntegrationTest(TestCase):
 
     def test_index_contains_form(self):
         response = self.client.get('/')
-        self.assertTrue('your name:' in response.content.lower())
+        self.assertTrue('your name:' in response.content.decode('utf-8').lower())
 
     def test_post_of_new_user(self):
         self.client.post('/register/', {'full_name': 'John Smith'})
@@ -45,4 +45,4 @@ class UserIntegrationTest(TestCase):
                             "likes other things and other stuff" ]
 
         for string in expected_strings:
-            self.assertTrue(string in content)
+            self.assertTrue(string in content.decode('utf-8'))
