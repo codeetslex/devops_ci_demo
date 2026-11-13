@@ -1,3 +1,2 @@
-django>=3.2,<4.0
+django>=6.1
 name_tools
-legacy-cgi
