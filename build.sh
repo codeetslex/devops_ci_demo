@@ -7,7 +7,7 @@ virtualenv venv
 
 source ./venv/bin/activate
 
-pip install -r requirements.txt
+pip install --default-timeout=120 --retries 5 --resume-retries -r requirements.txt
 
 cd faceit
 
